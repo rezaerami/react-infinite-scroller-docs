@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useWindowScroll from "../../hooks/useWindowScroll";
+import {useWindowScroll} from "react-infinite-scroller-snp";
 import Article from "./Partials/Article";
 import Counter from "./Partials/Counter";
 
