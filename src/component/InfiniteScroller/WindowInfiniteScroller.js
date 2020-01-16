@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useWindowScroll from "../../hooks/useWindowScroll";
-import Article from "./Article";
+import Article from "./Partials/Article";
+import Counter from "./Partials/Counter";
 
 const WindowInfiniteScroller = () => {
   const [itemsCount, setItemsCount] = useState(10);
@@ -10,8 +11,9 @@ const WindowInfiniteScroller = () => {
   return (
     <section className="content">
       {[...Array(itemsCount).keys()].map(key => <Article  key={key}/>)}
+      <Counter count={itemsCount} />
     </section>
   )
-}
+};
 
 export default WindowInfiniteScroller;

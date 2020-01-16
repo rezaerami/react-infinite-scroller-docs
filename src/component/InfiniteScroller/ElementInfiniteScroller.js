@@ -1,6 +1,7 @@
 import React, {useState, useRef} from "react";
 import {useElementScroll} from "../../hooks";
-import Article from "./Article";
+import Article from "./Partials/Article";
+import Counter from "./Partials/Counter";
 
 const ElementInfiniteScroller = () => {
   const [itemsCount, setItemsCount] = useState(10);
@@ -9,10 +10,16 @@ const ElementInfiniteScroller = () => {
     setTimeout(() => setItemsCount(itemsCount + 1), 500);
   });
   return (
-    <section className="content" ref={itemsListRef} style={{height: '400px', overflowY: 'auto'}}>
-      {[...Array(itemsCount).keys()].map(key => <Article  key={key}/>)}
-    </section>
+    <>
+      <section className="content"
+               ref={itemsListRef}
+               style={{height: '400px', overflowY: 'auto'}}
+      >
+        {[...Array(itemsCount).keys()].map(key => <Article  key={key}/>)}
+      </section>
+      <Counter count={itemsCount} />
+    </>
   )
-}
+};
 
 export default ElementInfiniteScroller;
