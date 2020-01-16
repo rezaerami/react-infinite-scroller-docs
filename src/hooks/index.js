@@ -1,4 +1,4 @@
-import useWindowScroll from "./useWindowScroll";
 import useElementScroll from "./useElementScroll";
+import useWindowScroll from "./useWindowScroll";
 
-export {useWindowScroll, useElementScroll}
+export {useElementScroll, useWindowScroll}

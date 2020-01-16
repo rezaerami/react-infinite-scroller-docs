@@ -1,26 +1,22 @@
-import React, {useRef, useState} from 'react';
-import {useWindowScroll, useElementScroll} from './hooks'
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Layout from "./component/Layout";
+import {WindowInfiniteScroller, ElementInfiniteScroller} from "./component/InfiniteScroller";
 import './resources/styles/styles.css'
 
-const App = () => {
-  const [itemsCount, setItemsCount] = useState(20);
-  const itemListRef = useRef(null)
-  useElementScroll(itemListRef, () => {
-    setTimeout(() => setItemsCount(itemsCount + 1), 500);
-  });
-  useWindowScroll(() => {
-    setTimeout(() => setItemsCount(itemsCount + 1), 500);
-  });
-  return (
-    <Layout>
-      <div className="App" ref={itemListRef} style={{overflowY: 'auto', height: '200px'}}>
-        {[...Array(itemsCount).keys()].map(key => (
-          <h1 key={key}>i'm item {key + 1}</h1>
-        ))}
-      </div>
-    </Layout>
-  );
-}
+const App = () => (
+  <Layout>
+    <Router>
+      <Switch>
+        <Route path="/element" exact>
+          <ElementInfiniteScroller />
+        </Route>
+        <Route path="/window" exact>
+          <WindowInfiniteScroller />
+        </Route>
+      </Switch>
+    </Router>
+  </Layout>
+)
 
 export default App;
