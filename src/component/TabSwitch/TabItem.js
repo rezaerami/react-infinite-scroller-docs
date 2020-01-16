@@ -7,7 +7,7 @@ const TabSwitch = ({tab, title}) => {
   const {activeTab, setActiveTab} = useContext(TabSwitchContext);
   return (
     <button
-      className={tab === activeTab ? 'active' : ''}
+      className={`tab-switch ${tab === activeTab ? 'active' : ''}`}
       onClick={() => setActiveTab(tab)}
     >
       {title}
