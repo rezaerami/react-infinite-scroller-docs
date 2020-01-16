@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import {NavLink} from "react-router-dom";
 
 import logo from '../../resources/images/logo.png'
+import TabSwitch from "../TabSwitch/TabItem";
 
 const Layout = ({children}) => (
   <>
@@ -12,8 +12,8 @@ const Layout = ({children}) => (
       </a>
     </header>
     <nav className="navigation">
-      <NavLink exact to="/">Home</NavLink>
-      <NavLink exact to="/docs">Docs</NavLink>
+      <TabSwitch tab="home" title="Home" />
+      <TabSwitch tab="docs" title="Docs" />
       <a target="_blank" href="https://github.com/rezaerami/react-snp-infinite-scroller/" >Github</a>
     </nav>
     <main>

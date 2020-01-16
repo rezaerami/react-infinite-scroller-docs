@@ -1,15 +1,14 @@
 import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import {Link} from "react-router-dom";
+import TabSwitch from "../TabSwitch/TabItem";
 
 const Docs = () => {
-  const handleScroll = id => window.scrollTo(0, document.getElementById(id).offsetTop)
   return (
     <div className="container">
       <nav className="doc-links">
-        <Link to="/docs" onClick={() => handleScroll('useElementScroller')} >useElementScroller</Link>
-        <Link to="/docs" onClick={() => handleScroll('useWindowScroller')}>useWindowScroller</Link>
+        <a href="#useElementScroller">useElementScroller</a>
+        <a href="#useWindowScroller">useWindowScroller</a>
       </nav>
       <section id="useElementScroller">
         <h1>useElementScroller</h1>
@@ -92,7 +91,7 @@ export default Foo`}
       <section>
         <h2>
           <span>Demo: </span>
-          <Link to="/examples/element">click here to see the demo</Link>
+          <TabSwitch tab="useElementInfiniteScroller" title="click here to see the demo"/>
         </h2>
       </section>
       <div className="separator" />
@@ -170,7 +169,7 @@ export default Foo`}
       <section>
         <h2>
           <span>Demo: </span>
-          <Link to="/examples/window">click here to see the demo</Link>
+          <TabSwitch tab="useWindowInfiniteScroller" title="click here to see the demo"/>
         </h2>
       </section>
     </div>

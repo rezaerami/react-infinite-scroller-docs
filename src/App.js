@@ -1,22 +1,29 @@
-import React from 'react';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom'
+import React, {useState} from 'react';
+
+import {TabSwitchProvider} from "./component/TabSwitch/context";
+
 import Layout from "./component/Layout";
 import Home from "./component/Home";
 import Docs from "./component/Docs";
 import {WindowInfiniteScroller, ElementInfiniteScroller} from "./component/InfiniteScroller";
+
 import './resources/styles/styles.css'
 
-const App = () => (
-    <Router>
+const App = () => {
+  const [activeTab, setActiveTab] = useState('home');
+  const content = {
+    home: <Home />,
+    docs: <Docs />,
+    useElementInfiniteScroller: <ElementInfiniteScroller />,
+    useWindowInfiniteScroller: <WindowInfiniteScroller />,
+  }
+  return (
+    <TabSwitchProvider value={{activeTab, setActiveTab}}>
       <Layout>
-        <Switch>
-          <Route path="/examples/element" exact component={ElementInfiniteScroller} />
-          <Route path="/examples/window" exact component={WindowInfiniteScroller} />
-          <Route path="/docs" exact component={Docs} />
-          <Route path="/" exact component={Home} />
-        </Switch>
+        {content[activeTab]}
       </Layout>
-    </Router>
-)
+    </TabSwitchProvider>
+  )
+};
 
 export default App;
