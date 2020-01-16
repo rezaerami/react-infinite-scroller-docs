@@ -1,5 +1,5 @@
 import React, {useState, useRef} from "react";
-import {useElementScroll} from "react-infinite-scroller-snp";
+import {useElementScroll} from "react-snp-infinite-scroller";
 import Article from "./Partials/Article";
 import Counter from "./Partials/Counter";
 
