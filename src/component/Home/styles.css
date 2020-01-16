@@ -1,0 +1,12 @@
+.container {
+    width: 720px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.container > section {
+     margin-top: 50px;
+ }
+.container h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
