@@ -9,7 +9,7 @@ const WindowInfiniteScroller = () => {
     setTimeout(() => setItemsCount(itemsCount + 1), 500);
   });
   return (
-    <section className="content">
+    <section className="container">
       {[...Array(itemsCount).keys()].map(key => <Article  key={key}/>)}
       <Counter count={itemsCount} />
     </section>
