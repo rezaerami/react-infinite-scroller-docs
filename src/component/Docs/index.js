@@ -60,7 +60,7 @@ export default Foo`}
         <b>Import useElementScroll hook</b>
       </h2>
       <SyntaxHighlighter language="javascript" style={dark}>
-        {`import {useElementScroll} from 'react-infinite-scroller';`}
+        {`import {useElementScroll} from 'react-infinite-scroller-snp';`}
       </SyntaxHighlighter>
     </section>
     <section>
@@ -71,7 +71,7 @@ export default Foo`}
       <p>Call useElementScroll hook with element ref</p>
       <SyntaxHighlighter language="javascript" style={dark}>
         {`import React, {useRef} from 'react';
-import {useElementScroll} from 'react-infinite-scroller';
+import {useElementScroll} from 'react-infinite-scroller-snp';
 
 const foo = () => {
     const elementRef = useRef;
@@ -139,7 +139,7 @@ export default Foo`}
         <b>Import useWindowScroll hook</b>
       </h2>
       <SyntaxHighlighter language="javascript" style={dark}>
-        {`import {useWindowScroll} from 'react-infinite-scroller';`}
+        {`import {useWindowScroll} from 'react-infinite-scroller-snp';`}
       </SyntaxHighlighter>
     </section>
     <section>
@@ -150,7 +150,7 @@ export default Foo`}
       <p>Call useWindowScroll hook</p>
       <SyntaxHighlighter language="javascript" style={dark}>
         {`import React from 'react';
-import {useWindowScroll} from 'react-infinite-scroller';
+import {useWindowScroll} from 'react-infinite-scroller-snp';
 
 const foo = () => {
     useWindowScroll(handleScroll, 100);

@@ -9,9 +9,9 @@ const Home = () => (
         <span>Step 1: </span>
         <b>Install it</b>
       </h2>
-      <p>Install react-infinite-scroller using npm</p>
+      <p>Install react-infinite-scroller-snp using npm</p>
       <SyntaxHighlighter language="javascript" style={dark}>
-        npm install --save rezaerami/react-infinite-scroller
+        npm install --save react-infinite-scroller-snp
       </SyntaxHighlighter>
     </section>
     <section>
@@ -21,7 +21,7 @@ const Home = () => (
       </h2>
       <p>Import it into your component</p>
       <SyntaxHighlighter language="javascript" style={dark}>
-        {`import {useElementScroll, useWindowScroll} from 'react-infinite-scroller';`}
+        {`import {useElementScroll, useWindowScroll} from 'react-infinite-scroller-snp';`}
       </SyntaxHighlighter>
     </section>
     <section>
