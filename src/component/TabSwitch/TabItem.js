@@ -8,7 +8,10 @@ const TabSwitch = ({tab, title}) => {
   return (
     <button
       className={`tab-switch ${tab === activeTab ? 'active' : ''}`}
-      onClick={() => setActiveTab(tab)}
+      onClick={() => {
+        window.scrollTo(0, 0);
+        setActiveTab(tab)
+      }}
     >
       {title}
     </button>

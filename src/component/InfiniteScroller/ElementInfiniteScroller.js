@@ -17,7 +17,7 @@ const ElementInfiniteScroller = () => {
         <h2>Example: </h2>
         <SyntaxHighlighter language="javascript" style={dark}>
           {`import React, {useState, useRef} from "react";
-  import {useElementScroll} from "react-snp-infinite-scroller";
+import {useElementScroll} from "react-snp-infinite-scroller";
   const ElementInfiniteScroller = () => {
     const [itemsCount, setItemsCount] = useState(10);
     const itemsListRef = useRef(null);
@@ -44,11 +44,12 @@ const ElementInfiniteScroller = () => {
         ))}
       </section>
     )
-  }
+  };
   export default ElementInfiniteScroller;`}
         </SyntaxHighlighter>
       </section>
       <section>
+        <h2>Demo: </h2>
         <div
           className="container"
           ref={itemsListRef}
