@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {NavLink} from "react-router-dom";
 
 import logo from '../../resources/images/logo.png'
-import './styles.css'
 
 const Layout = ({children}) => (
   <>
@@ -13,8 +12,8 @@ const Layout = ({children}) => (
       </a>
     </header>
     <nav className="navigation">
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/docs">Docs</NavLink>
+      <NavLink exact to="/">Home</NavLink>
+      <NavLink exact to="/docs">Docs</NavLink>
       <a target="_blank" href="https://github.com/rezaerami/react-infinite-scroller/" >Github</a>
     </nav>
     <main>

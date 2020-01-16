@@ -3,3 +3,66 @@ html, body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+.container {
+    width: 720px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.container > section {
+    margin-top: 50px;
+}
+.container h2 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.counter {
+    font-size: 20px;
+    text-align: center;
+}
+.content {
+    width: 600px;
+    max-width: 100%;
+    margin: 50px auto 0;
+}
+.article {
+    border-bottom: solid 2px #ededed;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.article h3 {
+    margin-top: 0;
+}
+.article p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+.header {
+    background-color: #ededed;
+    text-align: center;
+    padding: 20px
+}
+.header a {
+    text-decoration: none;
+}
+.header a >img {
+    width: 300px;
+    max-width: 100%;
+}
+.navigation {
+    background-color: #7b80ae;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navigation a {
+    text-decoration: none;
+    color: #fafafa;
+    padding: 10px;
+    margin: 0 10px;
+    font-size: 18px;
+}
+.navigation a.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}

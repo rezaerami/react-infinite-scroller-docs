@@ -2,8 +2,6 @@ import React from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import './styles.css'
-
 const Home = () => (
   <div className="container">
     <section>
@@ -23,7 +21,7 @@ const Home = () => (
       </h2>
       <p>Import it into your component</p>
       <SyntaxHighlighter language="javascript" style={dark}>
-        {`import {useElementScroll, useWindowScroll} from 'react-infinite-scroller`}
+        {`import {useElementScroll, useWindowScroll} from 'react-infinite-scroller';`}
       </SyntaxHighlighter>
     </section>
     <section>
