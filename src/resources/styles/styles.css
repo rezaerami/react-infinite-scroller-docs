@@ -15,6 +15,10 @@ html, body {
     font-size: 18px;
     font-weight: normal;
 }
+.container a {
+    color: #4970ae;
+    text-decoration: none;
+}
 
 .counter {
     font-size: 20px;
@@ -65,4 +69,22 @@ html, body {
 }
 .navigation a.active {
     background-color: rgba(0, 0, 0, 0.1);
+}
+.doc-links {
+    text-align: center;
+    margin-top: 30px;
+    border-bottom: solid 2px #ededed;
+    padding-bottom: 10px
+}
+.doc-links a {
+    padding: 10px;
+    margin: 0 5px;
+    color: #4970ae;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.separator {
+    border-bottom: solid 2px #ededed;
+    margin: 20px 0;
 }
