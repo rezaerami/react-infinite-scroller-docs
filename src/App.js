@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useRef, useState} from 'react';
+import {useWindowScroll, useElementScroll} from './hooks'
+import Layout from "./component/Layout";
+import './resources/styles/styles.css'
 
-function App() {
+const App = () => {
+  const [itemsCount, setItemsCount] = useState(20);
+  const itemListRef = useRef(null)
+  useElementScroll(itemListRef, () => {
+    setTimeout(() => setItemsCount(itemsCount + 1), 500);
+  });
+  useWindowScroll(() => {
+    setTimeout(() => setItemsCount(itemsCount + 1), 500);
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout>
+      <div className="App" ref={itemListRef} style={{overflowY: 'auto', height: '200px'}}>
+        {[...Array(itemsCount).keys()].map(key => (
+          <h1 key={key}>i'm item {key + 1}</h1>
+        ))}
+      </div>
+    </Layout>
   );
 }
 

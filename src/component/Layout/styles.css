@@ -1,0 +1,12 @@
+.header {
+    text-align: center;
+    border-bottom: solid 5px #3b71ae;
+    padding: 20px
+}
+.header a {
+    text-decoration: none;
+}
+.header a >img {
+    width: 300px;
+    max-width: 100%;
+}
