@@ -26,11 +26,11 @@ const Docs = () => {
             <small>function to call, when scroll of the element reaches to the bottom</small>
           </li>
           <li>
-            <b>hasMore [boolean] : </b>
+            <b>hasMore (boolean) : </b>
             <small>flag to let element, call the function</small>
           </li>
           <li>
-            <b>threshold [number] : </b>
+            <b>threshold (number) : </b>
             <small>threshold to call given function before reaching to the end, default is 100</small>
           </li>
         </ul>
@@ -116,11 +116,11 @@ export default Foo;`}
           <small>function to call, when scroll of the window reaches to the bottom</small>
         </li>
         <li>
-          <b>hasMore [boolean] : </b>
+          <b>hasMore (boolean) : </b>
           <small>flag to let window, call the function</small>
         </li>
         <li>
-          <b>threshold [number] : </b>
+          <b>threshold (number) : </b>
           <small>threshold to call given function before reaching to the end, default is 100</small>
         </li>
       </ul>
