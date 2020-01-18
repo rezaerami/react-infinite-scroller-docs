@@ -7,8 +7,8 @@ const Docs = () => {
   return (
     <div className="container">
       <nav className="doc-links">
-        <a href="#useElementScroller">useElementScroller</a>
-        <a href="#useWindowScroller">useWindowScroller</a>
+        <a href="#useElementScroll">useElementScroll</a>
+        <a href="#useWindowScroll">useWindowScroll</a>
       </nav>
       <section id="useElementScroller">
         <h1>useElementScroller</h1>
@@ -95,15 +95,19 @@ export default Foo`}
         </h2>
       </section>
       <div className="separator" />
-      <section id="useWindowScroller">
-        <h1>useWindowScroller</h1>
-        <p>useWindowScroller makes the window call a function each time that it reaches to the end.</p>
+      <section id="useWindowScroll">
+        <h1>useWindowScroll</h1>
+        <p>useWindowScroll makes the window call a function each time that it reaches to the end.</p>
       </section><section>
       <h1>API</h1>
       <ul>
         <li>
-          <b>fn (function) : </b>
+          <b>callback (function) : </b>
           <small>function to call, when scroll of the window reaches to the bottom</small>
+        </li>
+        <li>
+          <b>hasMore [boolean] : </b>
+          <small>flag to let window, call the function</small>
         </li>
         <li>
           <b>threshold [number] : </b>
@@ -111,7 +115,7 @@ export default Foo`}
         </li>
       </ul>
       <SyntaxHighlighter language="javascript" style={dark}>
-        {`useWindowScroll(fn, threshold);`}
+        {`useWindowScroll({callback, hasMore, threshold});`}
       </SyntaxHighlighter>
     </section>
       <section>
@@ -154,9 +158,13 @@ export default Foo`}
 import {useWindowScroll} from 'react-snp-infinite-scroller';
 
 const foo = () => {
-    useWindowScroll(handleScroll, 100);
-    
     const handleScroll = () => console.log("load more");
+    useWindowScroll({
+      callback: handleScroll,
+      hasMore: true,
+      threshold: 100
+    });
+  
     return (
         <div>
             // content goes here

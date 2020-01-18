@@ -32,7 +32,7 @@ const Home = () => (
       <p>Make window or an element call a function each time that it reaches to the end of the page</p>
       <SyntaxHighlighter language="javascript" style={dark}>
         {`useElementScroll(elementRef, fn, threshold);
-useWindowScroll(fn, threshold);`}
+useWindowScroll({callback, hasMore, threshold});`}
       </SyntaxHighlighter>
     </section>
   </div>
