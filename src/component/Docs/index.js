@@ -18,12 +18,16 @@ const Docs = () => {
         <h1>API</h1>
         <ul>
           <li>
-            <b>ref (reference) : </b>
+            <b>reference : </b>
             <small>reference to the element</small>
           </li>
           <li>
-            <b>fn (function) : </b>
+            <b>callback (function) : </b>
             <small>function to call, when scroll of the element reaches to the bottom</small>
+          </li>
+          <li>
+            <b>hasMore [boolean] : </b>
+            <small>flag to let element, call the function</small>
           </li>
           <li>
             <b>threshold [number] : </b>
