@@ -58,7 +58,7 @@ const WindowInfiniteScroller = () => {
           </article>
       ))}
     </section>
-  )
+  );
 };
 export default WindowInfiniteScroller;`}
         </SyntaxHighlighter>

@@ -10,9 +10,9 @@ const Docs = () => {
         <a href="#useElementScroll">useElementScroll</a>
         <a href="#useWindowScroll">useWindowScroll</a>
       </nav>
-      <section id="useElementScroller">
-        <h1>useElementScroller</h1>
-        <p>useElementScroller makes a component call a function each time that it reaches to the end.</p>
+      <section id="useElementScroll">
+        <h1>useElementScroll</h1>
+        <p>useElementScroll makes a component call a function each time that it reaches to the end.</p>
       </section>
       <section>
         <h1>API</h1>
@@ -31,7 +31,7 @@ const Docs = () => {
           </li>
         </ul>
         <SyntaxHighlighter language="javascript" style={dark}>
-          {`useElementScroll(ref, fn, threshold);`}
+          {`useElementScroll({reference, callback, hasMore, threshold});`}
         </SyntaxHighlighter>
       </section>
       <section>
@@ -44,15 +44,15 @@ const Docs = () => {
         <SyntaxHighlighter language="javascript" style={dark}>
           {`import React, {useRef} from 'react';
 const foo = () => {
-    const elementRef = useRef;
-    const handleScroll = () => console.log("load more");
-    return (
-        <div ref={elementRef}>
-            // content goes here
-        </div>
-    )
-}
-export default Foo`}
+  const elementRef = useRef;
+  const handleScroll = () => console.log("load more");
+  return (
+    <div ref={elementRef}>
+        // content goes here
+    </div>
+  );
+};
+export default Foo;`}
         </SyntaxHighlighter>
       </section>
       <section>
@@ -75,17 +75,23 @@ export default Foo`}
 import {useElementScroll} from 'react-snp-infinite-scroller';
 
 const foo = () => {
-    const elementRef = useRef;
-    useElementScroll(elementRef, handleScroll, 100);
+  const elementRef = useRef();
+  const handleScroll = () => console.log("load more");
+  
+  useElementScroll({
+    reference: elementRef,
+    callback: handleScroll,
+    hasMore: true,
+    threshold: 100
+  });
     
-    const handleScroll = () => console.log("load more");
-    return (
-        <div ref={elementRef}>
-            // content goes here
-        </div>
-    )
-}
-export default Foo`}
+  return (
+    <div ref={elementRef}>
+        // content goes here
+    </div>
+  );
+};
+export default Foo;`}
         </SyntaxHighlighter>
       </section>
       <section>
@@ -127,15 +133,15 @@ export default Foo`}
         <p>Have a component that contains your element</p>
         <SyntaxHighlighter language="javascript" style={dark}>
           {`import React from 'react';
-  const foo = () => {
-      const handleScroll = () => console.log("load more");
-      return (
-          <div>
-              // content goes here
-          </div>
-      )
-  }
-  export default Foo`}
+const foo = () => {
+  const handleScroll = () => console.log("load more");
+  return (
+    <div>
+        // content goes here
+    </div>
+  );
+};
+export default Foo;`}
         </SyntaxHighlighter>
       </section>
       <section>
@@ -158,20 +164,20 @@ export default Foo`}
 import {useWindowScroll} from 'react-snp-infinite-scroller';
 
 const foo = () => {
-    const handleScroll = () => console.log("load more");
-    useWindowScroll({
-      callback: handleScroll,
-      hasMore: true,
-      threshold: 100
-    });
-  
-    return (
-        <div>
-            // content goes here
-        </div>
-    )
-}
-export default Foo`}
+  const handleScroll = () => console.log("load more");
+  useWindowScroll({
+    callback: handleScroll,
+    hasMore: true,
+    threshold: 100,
+  });
+
+  return (
+    <div>
+        // content goes here
+    </div>
+  );
+};
+export default Foo;`}
         </SyntaxHighlighter>
       </section>
       <section>

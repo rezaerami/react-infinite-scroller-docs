@@ -7,9 +7,19 @@ import {dark} from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const ElementInfiniteScroller = () => {
   const [itemsCount, setItemsCount] = useState(10);
-  const itemsListRef = useRef(null);
-  useElementScroll(itemsListRef, () => {
-    setTimeout(() => setItemsCount(itemsCount + 1), 500);
+  const [hasMore, setHasMore] = useState(10);
+  const itemsListRef = useRef(true);
+  const handlePaginate = () => {
+    setHasMore(false);
+    setTimeout(() => {
+      setItemsCount(itemsCount + 1);
+      setHasMore(true);
+    }, 500);
+  };
+  useElementScroll({
+    reference: itemsListRef,
+    callback: handlePaginate,
+    hasMore,
   });
   return (
     <section className="container">
@@ -20,9 +30,19 @@ const ElementInfiniteScroller = () => {
 import {useElementScroll} from "react-snp-infinite-scroller";
   const ElementInfiniteScroller = () => {
     const [itemsCount, setItemsCount] = useState(10);
-    const itemsListRef = useRef(null);
-    useElementScroll(itemsListRef, () => {
-      setTimeout(() => setItemsCount(itemsCount + 1), 500);
+    const [hasMore, setHasMore] = useState(10);
+    const itemsListRef = useRef(true);
+    const handlePaginate = () => {
+      setHasMore(false);
+      setTimeout(() => {
+        setItemsCount(itemsCount + 1);
+        setHasMore(true);
+      }, 500);
+    };
+    useElementScroll({
+      reference: itemsListRef,
+      callback: handlePaginate,
+      hasMore,
     });
     return (
       <section
@@ -43,7 +63,7 @@ import {useElementScroll} from "react-snp-infinite-scroller";
             </article>
         ))}
       </section>
-    )
+    );
   };
   export default ElementInfiniteScroller;`}
         </SyntaxHighlighter>
